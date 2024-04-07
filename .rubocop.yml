@@ -3,6 +3,10 @@ require:
 - rubocop-rspec
 - rubocop-performance
 
+# Disregard EndOfLine until I figure out a way to apply a style systematically to all files.
+Layout/EndOfLine:
+  Enabled: false
+
 # Disable verified doubles as we want units and their corresponding tests to be fully self-contained, as opposed to
 # referencing a concrete implementation class outside of the unit and test.
 RSpec/VerifiedDoubles:
