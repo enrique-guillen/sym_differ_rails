@@ -7,6 +7,7 @@ require "sym_differ/expression_reducer"
 require "sym_differ/inline_printing/printing_visitor"
 require "sym_differ/differentiation/differentiation_visitor"
 
+# Temporary tentative implementation of DifferentiationVisitorBuilder.
 class DifferentiationVisitorBuilder
   def build(variable)
     SymDiffer::Differentiation::DifferentiationVisitor.new(variable)
