@@ -38,7 +38,13 @@ RSpec/ExampleLength:
 RSpec/NestedGroups:
   Max: 5
 
-# Cops not enabled by default are all enabled here.
+# It's conventional for Rails configuration files to be lengthy, and there's no reasonable way to split the file nor is
+# it urgent.
+Metrics/BlockLength:
+  Exclude:
+  - "config/environments/development.rb"
+
+# Core Rubocop cops not enabled by default are all enabled here.
 Gemspec/DeprecatedAttributeAssignment:
   Enabled: true
 Gemspec/DevelopmentDependencies:
