@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby "3.2.3"
@@ -18,10 +20,6 @@ gem "jbuilder"
 
 gem "bootsnap", require: false
 
-group :development do
-  gem "web-console"
-end
-
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
@@ -35,4 +33,5 @@ group :development do
   gem "rubocop-performance", "~> 1.20.2"
   gem "rubocop-rails", "~> 2.24.0"
   gem "rubocop-rspec", "~> 2.22.0"
+  gem "web-console"
 end

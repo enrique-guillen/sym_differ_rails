@@ -122,9 +122,6 @@ GEM
     cucumber-messages (22.0.0)
     cucumber-tag-expressions (6.1.0)
     date (3.3.4)
-    debug (1.9.2)
-      irb (~> 1.10)
-      reline (>= 0.3.8)
     diff-lcs (1.5.1)
     drb (2.2.1)
     erubi (1.12.0)
@@ -331,7 +328,6 @@ DEPENDENCIES
   bootsnap
   capybara
   cucumber (~> 9.2.0)
-  debug
   importmap-rails
   jbuilder
   puma (>= 5.0)
