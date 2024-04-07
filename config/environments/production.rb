@@ -12,8 +12,6 @@ Rails.application.configure do
 
   config.assets.compile = false
 
-  config.active_storage.service = :local
-
   config.force_ssl = true
 
   config.logger = ActiveSupport::Logger.new($stdout)
@@ -30,5 +28,5 @@ Rails.application.configure do
 
   config.active_support.report_deprecations = false
 
-  config.active_record.dump_schema_after_migration = false
+  # config.active_record.dump_schema_after_migration = false
 end

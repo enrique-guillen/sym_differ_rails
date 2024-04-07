@@ -25,8 +25,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.active_storage.service = :local
-
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
@@ -37,9 +35,9 @@ Rails.application.configure do
 
   config.active_support.disallowed_deprecation_warnings = []
 
-  config.active_record.migration_error = :page_load
+  # config.active_record.migration_error = :page_load
 
-  config.active_record.verbose_query_logs = true
+  # config.active_record.verbose_query_logs = true
 
   config.active_job.verbose_enqueue_logs = true
 
