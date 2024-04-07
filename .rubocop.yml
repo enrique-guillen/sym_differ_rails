@@ -44,6 +44,9 @@ Metrics/BlockLength:
   Exclude:
   - "config/environments/development.rb"
 
+RSpec/Rails:
+  Enabled: true
+
 # Core Rubocop cops not enabled by default are all enabled here.
 Gemspec/DeprecatedAttributeAssignment:
   Enabled: true
@@ -316,8 +319,6 @@ RSpec/SubjectDeclaration:
   Enabled: true
 RSpec/VerifiedDoubleReference:
   Enabled: true
-RSpec/Rails:
-  Enabled: false
 Performance/AncestorsInclude:
   Enabled: true
 Performance/BigDecimalWithNumericArgument:
