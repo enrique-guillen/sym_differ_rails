@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/enrique-guillen/sym_differ
+  revision: 9a2740b288924de48769debece9987692e4182e2
+  branch: main
+  specs:
+    sym_differ (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -341,6 +348,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  sym_differ!
   turbo-rails
   web-console
 

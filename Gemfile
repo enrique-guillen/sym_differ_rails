@@ -20,6 +20,8 @@ gem "jbuilder"
 
 gem "bootsnap", require: false
 
+gem "sym_differ", git: "https://github.com/enrique-guillen/sym_differ", branch: "main", require: false
+
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
