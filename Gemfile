@@ -22,6 +22,8 @@ gem "bootsnap", require: false
 
 gem "sym_differ", git: "https://github.com/enrique-guillen/sym_differ", branch: "main", require: false
 
+gem "tzinfo-data"
+
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
