@@ -1,0 +1,2 @@
+json.message "invalid_variable_given_to_expression_parser_error"
+json.invalid_variable_name @sym_differ_exception.invalid_variable_name
