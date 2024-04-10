@@ -10,6 +10,7 @@ class DerivativeExpressionController < ApplicationController
       .new
       .calculate_derivative(params.require(:expression), params.require(:variable))
 
+    response.set_header("Access-Control-Allow-Origin", "http://localhost:5173")
     render(formats: %i[json])
   end
 end
