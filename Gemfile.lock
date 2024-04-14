@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/enrique-guillen/sym_differ
-  revision: 6125a456fe7f12bb893982000b92b748971b7875
+  revision: 5a9d4b73decd5073df8b8e3d291589efcda50907
   branch: main
   specs:
     sym_differ (1.0.0)
@@ -364,7 +364,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.2.3p157
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.5.7
