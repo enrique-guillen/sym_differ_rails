@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe "DerivativeExpressions" do
   describe "GET /derivative_expression" do
     subject(:get_derivative_expression) do
-      get("/derivative_expression", params: params)
+      get("/derivative_expression", params:)
     end
 
     context "when the expression is x + x, variable x" do
