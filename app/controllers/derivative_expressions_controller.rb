@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "sym_differ/get_derivative_of_expression_director"
+require "sym_differ/get_derivative_of_expression_interactor"
 require "sym_differ/unparseable_expression_text_error"
 require "sym_differ/invalid_variable_given_to_expression_parser_error"
 
@@ -25,7 +25,7 @@ class DerivativeExpressionsController < ApplicationController
 
   def calculate_derivate
     @operation_response =
-      SymDiffer::GetDerivativeOfExpressionDirector
+      SymDiffer::GetDerivativeOfExpressionInteractor
       .new
       .calculate_derivative(params.fetch(:expression), params.fetch(:variable))
   end
