@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 require "sym_differ/get_derivative_of_expression_interactor"
-require "sym_differ/unparseable_expression_text_error"
-require "sym_differ/invalid_variable_given_to_expression_parser_error"
+require "sym_differ/error"
 
 # Allows computing the derivative of a given expression.
 class DerivativeExpressionsController < ApplicationController
@@ -10,8 +9,7 @@ class DerivativeExpressionsController < ApplicationController
     set_access_control_allow_origin_to_localhost
     calculate_derivate
     render formats: %i[json]
-  rescue SymDiffer::UnparseableExpressionTextError,
-         SymDiffer::InvalidVariableGivenToExpressionParserError => e
+  rescue SymDiffer::Error => e
     @sym_differ_exception = e.cause || e
     view_name = view_name_for_exception_cause(e)
     render view_name, status: :unprocessable_entity, formats: %i[json]
