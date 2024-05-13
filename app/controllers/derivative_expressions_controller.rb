@@ -8,10 +8,12 @@ class DerivativeExpressionsController < ApplicationController
   def show
     set_access_control_allow_origin_to_localhost
     calculate_derivate
+
     render formats: %i[json]
   rescue SymDiffer::Error => e
     @sym_differ_exception = e.cause || e
     view_name = view_name_for_exception_cause(e)
+
     render view_name, status: :unprocessable_entity, formats: %i[json]
   end
 
@@ -23,9 +25,7 @@ class DerivativeExpressionsController < ApplicationController
 
   def calculate_derivate
     @operation_response =
-      SymDiffer::GetDerivativeOfExpressionInteractor
-      .new
-      .calculate_derivative(params.fetch(:expression), params.fetch(:variable))
+      calculate_interactor.calculate_derivative(params.fetch(:expression), params.fetch(:variable))
   end
 
   def view_name_for_exception_cause(exception)
@@ -36,5 +36,9 @@ class DerivativeExpressionsController < ApplicationController
 
   def underscore_class_name(object)
     object.class.name.underscore.split("/").last
+  end
+
+  def calculate_interactor
+    SymDiffer::GetDerivativeOfExpressionInteractor.new
   end
 end
