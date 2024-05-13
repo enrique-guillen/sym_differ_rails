@@ -2,6 +2,7 @@
 
 require "active_support/concern"
 
+# Renders a default response when a SymDiffer::Error occurs.
 module SymDifferExceptionHandlingConcern
   extend ActiveSupport::Concern
 

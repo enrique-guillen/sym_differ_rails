@@ -2,6 +2,7 @@
 
 require "active_support/concern"
 
+# Sets the response headers so that the response has the expected Access-Control-Allow-Origin value.
 module AccessControlConcern
   extend ActiveSupport::Concern
 
