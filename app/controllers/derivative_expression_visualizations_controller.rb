@@ -14,7 +14,7 @@ class DerivativeExpressionVisualizationsController < ApplicationController
     @sym_differ_exception = e.cause || e
     view_name = view_name_for_exception_cause(e)
 
-    render "derivative_expressions/#{view_name}", status: :unprocessable_entity, formats: %i[json]
+    render "global_exceptions/#{view_name}", status: :unprocessable_entity, formats: %i[json]
   end
 
   private
