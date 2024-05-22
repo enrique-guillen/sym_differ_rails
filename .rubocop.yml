@@ -49,6 +49,12 @@ Style/FrozenStringLiteralComment:
   Exclude:
   - "app/views/**/**"
 
+Performance/MethodObjectAsBlock:
+  Enabled: true
+  Exclude:
+  # This cop is irrelevant for specs.
+    - "spec/**/**"
+
 RSpec/Rails:
   Enabled: true
 
@@ -465,8 +471,6 @@ Performance/ConstantRegexp:
 Performance/MapCompact:
   Enabled: true
 Performance/MapMethodChain:
-  Enabled: true
-Performance/MethodObjectAsBlock:
   Enabled: true
 Performance/RedundantEqualityComparisonBlock:
   Enabled: true

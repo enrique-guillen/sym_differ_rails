@@ -2,10 +2,10 @@
 
 require "rails_helper"
 
-RSpec.describe "FirstOrderDifferentialEquationApproximations" do
-  describe "GET /first_order_differential_equation_approximation" do
-    subject(:get_first_order_differential_equation_approximation) do
-      get("/first_order_differential_equation_approximation", params:)
+RSpec.describe "DifferentialEquationApproximationIllustrations" do
+  describe "GET /differential_equation_approximation_illustration" do
+    subject(:get_differential_equation_approximation_illustration) do
+      get("/differential_equation_approximation_illustration", params:)
     end
 
     context "when the expression is 2 * x, variable x" do
@@ -16,27 +16,15 @@ RSpec.describe "FirstOrderDifferentialEquationApproximations" do
           initial_value_coordinates: %w[0 0] }
       end
 
-      let(:expected_evaluation_points) do
-        [
-          { "abscissa" => 0.0, "ordinate" => 0.0 },
-          { "abscissa" => 0.125, "ordinate" => 0.04687499999999999 },
-          { "abscissa" => 0.5, "ordinate" => 0.37500000000000006 },
-          { "abscissa" => 1.0, "ordinate" => 1.2500000000000004 },
-          { "abscissa" => 5.0, "ordinate" => 26.25 },
-          { "abscissa" => 10.0, "ordinate" => 102.50000000000003 }
-        ]
-      end
-
       it "renders the expected value" do
-        get_first_order_differential_equation_approximation
+        get_differential_equation_approximation_illustration
 
         expect(response).to have_attributes(
-          parsed_body: a_hash_including(
-            "approximated_solution" => a_collection_including(
-              *expected_evaluation_points.map(&method(:a_hash_including))
-            )
+          parsed_body: a_string_including("<svg version").and(including("ordinate")),
+          headers: a_hash_including(
+            "Content-Type" => "image/svg+xml",
+            "Access-Control-Allow-Origin" => "http://localhost:5173"
           ),
-          headers: a_hash_including("Access-Control-Allow-Origin" => "http://localhost:5173"),
           status: 200
         )
       end
@@ -51,7 +39,7 @@ RSpec.describe "FirstOrderDifferentialEquationApproximations" do
       end
 
       it "renders the expected value" do
-        get_first_order_differential_equation_approximation
+        get_differential_equation_approximation_illustration
 
         expect(response).to have_attributes(
           parsed_body: { "message" => "invalid_variable_given_to_expression_parser_error",

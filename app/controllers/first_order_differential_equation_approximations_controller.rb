@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "sym_differ/get_first_order_differential_equation_approximation_interactor"
+
+# Allows approximating the solution of a given differential equation.
 class FirstOrderDifferentialEquationApproximationsController < ApplicationController
   include SymDifferExceptionHandlingConcern
   include AccessControlConcern

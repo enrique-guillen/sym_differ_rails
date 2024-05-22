@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get "derivative_expression_visualization", to: "derivative_expression_visualizations#show"
 
   get "first_order_differential_equation_approximation", to: "first_order_differential_equation_approximations#show"
+
+  get "differential_equation_approximation_illustration", to: "differential_equation_approximation_illustrations#show"
 end
