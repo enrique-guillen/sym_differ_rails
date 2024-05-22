@@ -15,7 +15,7 @@ RSpec.describe "DerivativeExpressionVisualizations" do
         get_derivative_expression_visualization
 
         expect(response).to have_attributes(
-          parsed_body: a_string_including("<svg version").and(including("expression-curve-approximation")),
+          parsed_body: a_string_including("<svg version").and(including("ordinate")),
           headers: a_hash_including(
             "Content-Type" => "image/svg+xml",
             "Access-Control-Allow-Origin" => "http://localhost:5173"
