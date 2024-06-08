@@ -37,15 +37,15 @@ RSpec.describe "DerivativeExpressions" do
       end
     end
 
-    context "when the expression is 123x~, variable x" do
-      let(:params) { { expression: "123~", variable: "x" } }
+    context "when the expression is 123x%, variable x" do
+      let(:params) { { expression: "123%", variable: "x" } }
 
       it "renders the expected value" do
         get_derivative_expression
 
         expect(response).to have_attributes(
           parsed_body: { "message" => "unrecognized_token_error",
-                         "invalid_expression_text" => "~" },
+                         "invalid_expression_text" => "%" },
           headers: a_hash_including("Access-Control-Allow-Origin" => "http://localhost:5173"),
           status: 422
         )
