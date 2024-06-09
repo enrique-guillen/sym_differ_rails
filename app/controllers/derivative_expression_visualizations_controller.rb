@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "sym_differ/visualize_expression_and_derivative_expression_interactor"
+require "sym_differ/visualize_differentiation_interactor"
 require "sym_differ/error"
 
 # Allows visualization the derivative of a given expression.
@@ -24,6 +24,6 @@ class DerivativeExpressionVisualizationsController < ApplicationController
   end
 
   def visualize_interactor
-    SymDiffer::VisualizeExpressionAndDerivativeExpressionInteractor.new
+    SymDiffer::VisualizeDifferentiationInteractor.new
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "sym_differ/get_first_order_differential_equation_approximation_interactor"
+require "sym_differ/get_differential_equation_approximation_interactor"
 
 # Allows approximating the solution of a given differential equation.
 class FirstOrderDifferentialEquationApproximationsController < ApplicationController
@@ -29,6 +29,6 @@ class FirstOrderDifferentialEquationApproximationsController < ApplicationContro
   end
 
   def approximate_interactor
-    SymDiffer::GetFirstOrderDifferentialEquationApproximationInteractor.new
+    SymDiffer::GetDifferentialEquationApproximationInteractor.new
   end
 end

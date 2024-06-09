@@ -79,5 +79,61 @@ RSpec.describe "DerivativeExpressions" do
         )
       end
     end
+
+    context "when the expression is 1**, variable x" do
+      let(:params) { { expression: "1**", variable: "x" } }
+
+      it "renders the expected value" do
+        get_derivative_expression
+
+        expect(response).to have_attributes(
+          parsed_body: { "message" => "invalid_syntax_error" },
+          headers: a_hash_including("Access-Control-Allow-Origin" => "http://localhost:5173"),
+          status: 422
+        )
+      end
+    end
+
+    context "when the expression is (1+2, variable x" do
+      let(:params) { { expression: "(1+2", variable: "x" } }
+
+      it "renders the expected value" do
+        get_derivative_expression
+
+        expect(response).to have_attributes(
+          parsed_body: { "message" => "invalid_syntax_error" },
+          headers: a_hash_including("Access-Control-Allow-Origin" => "http://localhost:5173"),
+          status: 422
+        )
+      end
+    end
+
+    context "when the expression is omg(1+2), variable x" do
+      let(:params) { { expression: "omg(1+2)", variable: "x" } }
+
+      it "renders the expected value" do
+        get_derivative_expression
+
+        expect(response).to have_attributes(
+          parsed_body: { "message" => "invalid_syntax_error" },
+          headers: a_hash_including("Access-Control-Allow-Origin" => "http://localhost:5173"),
+          status: 422
+        )
+      end
+    end
+
+    context "when the expression is ~bla, variable x" do
+      let(:params) { { expression: "~bla", variable: "x" } }
+
+      it "renders the expected value" do
+        get_derivative_expression
+
+        expect(response).to have_attributes(
+          parsed_body: { "message" => "invalid_syntax_error" },
+          headers: a_hash_including("Access-Control-Allow-Origin" => "http://localhost:5173"),
+          status: 422
+        )
+      end
+    end
   end
 end
