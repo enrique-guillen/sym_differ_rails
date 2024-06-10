@@ -10,7 +10,7 @@ module AccessControlConcern
     before_action :set_access_control_allow_origin_to_localhost
 
     def set_access_control_allow_origin_to_localhost
-      response.set_header("Access-Control-Allow-Origin", "http://localhost:5173")
+      response.set_header("Access-Control-Allow-Origin", ENV.fetch("DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN"))
     end
   end
 end
