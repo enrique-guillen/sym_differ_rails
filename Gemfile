@@ -31,6 +31,7 @@ end
 
 group :development do
   gem "cucumber", "~> 9.2.0", require: false
+  gem "dotenv"
   gem "reek", require: false
   gem "rspec", "~> 3.13.0", require: false
   gem "rspec-rails", "~> 6.1.0"
